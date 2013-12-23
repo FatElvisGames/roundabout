@@ -45,6 +45,9 @@
 		083A01041865C80700D21B75 /* KIP_SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 083A01031865C80700D21B75 /* KIP_SplashScreen.m */; };
 		083A01061865C86600D21B75 /* feg_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 083A01051865C86600D21B75 /* feg_logo.png */; };
 		08B71FBC186655B700A0DD91 /* FEG_Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B71FBB186655B700A0DD91 /* FEG_Circle.m */; };
+		08B71FC218671CCA00A0DD91 /* FEG_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B71FC118671CCA00A0DD91 /* FEG_RegisterController.m */; };
+		08B71FCE1867CB5300A0DD91 /* FEG_GameBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B71FCD1867CB5300A0DD91 /* FEG_GameBoard.m */; };
+		08B71FD11867CBBE00A0DD91 /* FEG_HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B71FD01867CBBE00A0DD91 /* FEG_HUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,12 @@
 		083A01051865C86600D21B75 /* feg_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feg_logo.png; sourceTree = "<group>"; };
 		08B71FBA186655B700A0DD91 /* FEG_Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_Circle.h; sourceTree = "<group>"; };
 		08B71FBB186655B700A0DD91 /* FEG_Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_Circle.m; sourceTree = "<group>"; };
+		08B71FC018671CCA00A0DD91 /* FEG_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_RegisterController.h; sourceTree = "<group>"; };
+		08B71FC118671CCA00A0DD91 /* FEG_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_RegisterController.m; sourceTree = "<group>"; };
+		08B71FCC1867CB5300A0DD91 /* FEG_GameBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_GameBoard.h; sourceTree = "<group>"; };
+		08B71FCD1867CB5300A0DD91 /* FEG_GameBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_GameBoard.m; sourceTree = "<group>"; };
+		08B71FCF1867CBBE00A0DD91 /* FEG_HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_HUD.h; sourceTree = "<group>"; };
+		08B71FD01867CBBE00A0DD91 /* FEG_HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_HUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +191,8 @@
 		083A008D1865AD9000D21B75 /* RoundAbout */ = {
 			isa = PBXGroup;
 			children = (
+				083A00EC1865C3D100D21B75 /* AppViewController.h */,
+				083A00ED1865C3D100D21B75 /* AppViewController.m */,
 				083A01071865C8E500D21B75 /* Config */,
 				083A00FB1865C6DA00D21B75 /* Fonts */,
 				083A00F41865C4A600D21B75 /* Classes */,
@@ -192,8 +203,6 @@
 				083A00BC1865C31600D21B75 /* Images */,
 				083A00961865AD9000D21B75 /* AppDelegate.h */,
 				083A00971865AD9000D21B75 /* AppDelegate.m */,
-				083A00EC1865C3D100D21B75 /* AppViewController.h */,
-				083A00ED1865C3D100D21B75 /* AppViewController.m */,
 				083A00991865AD9000D21B75 /* Main.storyboard */,
 				083A009F1865AD9000D21B75 /* Images.xcassets */,
 				083A008E1865AD9000D21B75 /* Supporting Files */,
@@ -267,6 +276,12 @@
 		083A00BF1865C32600D21B75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				08B71FC018671CCA00A0DD91 /* FEG_RegisterController.h */,
+				08B71FC118671CCA00A0DD91 /* FEG_RegisterController.m */,
+				08B71FCC1867CB5300A0DD91 /* FEG_GameBoard.h */,
+				08B71FCD1867CB5300A0DD91 /* FEG_GameBoard.m */,
+				08B71FCF1867CBBE00A0DD91 /* FEG_HUD.h */,
+				08B71FD01867CBBE00A0DD91 /* FEG_HUD.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -445,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B71FD11867CBBE00A0DD91 /* FEG_HUD.m in Sources */,
 				083A00EA1865C39100D21B75 /* DispatchQueueLogFormatter.m in Sources */,
 				083A00E11865C38700D21B75 /* DDFileLogger.m in Sources */,
 				083A00CB1865C34B00D21B75 /* KIP_StringManager.m in Sources */,
@@ -462,8 +478,10 @@
 				08B71FBC186655B700A0DD91 /* FEG_Circle.m in Sources */,
 				083A00EE1865C3D100D21B75 /* AppViewController.m in Sources */,
 				083A00941865AD9000D21B75 /* main.m in Sources */,
+				08B71FC218671CCA00A0DD91 /* FEG_RegisterController.m in Sources */,
 				083A00CA1865C34B00D21B75 /* KIP_ValidationManager.m in Sources */,
 				083A00D21865C36D00D21B75 /* Reachability.m in Sources */,
+				08B71FCE1867CB5300A0DD91 /* FEG_GameBoard.m in Sources */,
 				083A00CC1865C34B00D21B75 /* KIP_NetworkStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

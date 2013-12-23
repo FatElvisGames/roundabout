@@ -24,6 +24,8 @@
         vSplashScreen = [[KIP_SplashScreen alloc] init];
         
         deviceBounds = self.view.bounds;
+        
+        vcRegister = [[FEG_RegisterController alloc] init];
     }
     return self;
 }
@@ -70,6 +72,8 @@
     if ([appDefaults objectForKey:@"Player Color"] == nil) {
         
         //launch register screen if not
+        [self presentChildViewController:vcRegister];
+        
         
     } else {
         
@@ -100,7 +104,7 @@
     [self addChildViewController:vcChild];
     
     [vcChild.view setFrame:CGRectMake(1025.0, 0.0, 1024.0, 768.0)];
-    
+        
     [self.view addSubview:vcChild.view];
     
     if (_currentViewController) {
@@ -124,6 +128,7 @@
                      }
      
                      completion:^(BOOL finished) {
+                         
                      }
      ];
     
