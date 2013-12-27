@@ -14,7 +14,7 @@
 {
     
     //establish lumberjack logging
-    [self setupLogging];
+    [self setUpLogging];
     
     DDLogVerbose(@"\n\n*********************\nNEW LOG SESSION\n**********************\n\n");
     
@@ -54,7 +54,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)setupLogging {
+- (void)setUpLogging {
     
     //logs are stored in iPhoneSimulator/OS#/Applications/App#/Library/Caches/Logs/
     

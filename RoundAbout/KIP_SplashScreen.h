@@ -29,7 +29,6 @@
     
 }
 
-- (void) adjustForRotation : (UIDeviceOrientation*) orientation;
 
 - (void) runSplashScreenAnimation; 
 

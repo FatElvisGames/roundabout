@@ -33,7 +33,7 @@
         //load the logo
         imgLogo = [UIImage imageNamed:@"feg_logo.png"];
         ivLogo = [[UIImageView alloc] initWithImage:imgLogo];
-        [ivLogo setFrame:CGRectMake(512-(imgLogo.size.width/2), 200.0, imgLogo.size.width, imgLogo.size.height)];
+        [ivLogo setFrame:CGRectMake(384.0-(imgLogo.size.width/2), 200.0, imgLogo.size.width, imgLogo.size.height)];
         
         
         //add the OMDT title
@@ -41,7 +41,7 @@
         CGSize titleSize = [stringManager getStringSize:CGSizeMake(self.frame.size.width, 999.0) :TITLE_FONT :strAppTitle];
         float labelY = ivLogo.frame.origin.y + 240.0;
         
-        lblAppTitle = [[UILabel alloc] initWithFrame:CGRectMake(512-(titleSize.width/2), labelY, titleSize.width, titleSize.height)];
+        lblAppTitle = [[UILabel alloc] initWithFrame:CGRectMake(384.0-(titleSize.width/2), labelY, titleSize.width, titleSize.height)];
         lblAppTitle.text = strAppTitle;
         lblAppTitle.backgroundColor = [UIColor clearColor];
         lblAppTitle.textColor = titleColor;
@@ -81,30 +81,6 @@
     
 }
 
-- (void) adjustForRotation : (UIDeviceOrientation*) orientation {
-    
-    CGRect myFrame = self.frame;
-    CGRect logoFrame = ivLogo.frame;
-    CGRect titleFrame = lblAppTitle.frame;
-    
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
-        
-        myFrame.size.width = 1024.0;
-        myFrame.size.height = 768.0;
-        
-    } else if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
-        
-        myFrame.size.width = 768.0;
-        myFrame.size.height = 1024.0;
-        
-    }
-    
-    self.frame = myFrame;
-    
-   
-
-        
-}
 
 
 /*

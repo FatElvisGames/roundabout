@@ -19,13 +19,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        
         self.view.backgroundColor = [UIColor whiteColor];
         vSplashScreen = [[KIP_SplashScreen alloc] init];
+        
+        userDefaults = [NSUserDefaults standardUserDefaults];
         
         deviceBounds = self.view.bounds;
         
         vcRegister = [[FEG_RegisterController alloc] init];
+        vcGameBoard = [[FEG_GameBoard alloc] init];
     }
     return self;
 }
@@ -36,7 +38,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"message"object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     
     vSplashScreen = [[KIP_SplashScreen alloc] initWithFrame:CGRectMake(deviceBounds.origin.x, deviceBounds.origin.y, deviceBounds.size.width, deviceBounds.size.height)];
     [self.view addSubview:vSplashScreen];
@@ -57,44 +59,52 @@
         if ([strAction isEqualToString:@"Splash Screen Animation Finished"]) {
             
             [self checkUserRegistration];
+        
+        } else if ([strAction isEqualToString:@"Show Game"]) {
+            
+            [self showGameBoard];
+            
         }
         
     }
     
 }
 
+#pragma mark - Registration Methods
+
 - (void) checkUserRegistration {
     
     //get the standard defaults
-    NSUserDefaults* appDefaults = [NSUserDefaults standardUserDefaults];
     
     //check to see if player has set up a color yet
-    if ([appDefaults objectForKey:@"Player Color"] == nil) {
+    if ([userDefaults objectForKey:@"User Color"] == nil) {
         
         //launch register screen if not
         [self presentChildViewController:vcRegister];
         
         
     } else {
-        
-        
-        //launch game screen
+        [self showGameBoard];
     }
 }
 
-#pragma mark - Device Orientation Methods
-- (void) deviceOrientationDidChange {
+#pragma mark - Game Board Methods
+- (void) showGameBoard {
     
-    //get the current orientation
-    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    //get the uicolor data and convert
+    NSData* colorData = [userDefaults objectForKey:@"User Color"];
+    UIColor* clrUserColor = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
     
-    //rotate splash screen
-    if (vSplashScreen) {
-        [vSplashScreen adjustForRotation:&orientation];
-    }
+    //store here
+    self.clrUserColor = clrUserColor;
     
-    
+    //launch game screen
+    vcGameBoard.strUserName = [userDefaults objectForKey:@"User Name"];
+    vcGameBoard.clrUserColor = self.clrUserColor;
+    [self presentChildViewController:vcGameBoard];
+    [vcGameBoard setUpGameBoard:1];
 }
+
 
 #pragma mark - Container View Controllers
 
@@ -103,7 +113,7 @@
     //add the child view controller
     [self addChildViewController:vcChild];
     
-    [vcChild.view setFrame:CGRectMake(1025.0, 0.0, 1024.0, 768.0)];
+    [vcChild.view setFrame:CGRectMake(769.0, 0.0, 768.0, 1024.0)];
         
     [self.view addSubview:vcChild.view];
     

@@ -15,14 +15,26 @@
 
 #import "FEG_Circle.h"
 
-@interface FEG_RegisterController : UIViewController {
+@interface FEG_RegisterController : UIViewController <UITextFieldDelegate>{
     
     KIP_ColorManager* colorManager;
     KIP_NumberManager* numberManager;
     KIP_StringManager* stringManager;
     
+    UITextField* txtUserName;
+    
 }
 
+@property (nonatomic, strong) UIColor* clrMyColor;
+@property (nonatomic, strong) NSString* strUserName;
+@property (nonatomic, assign) int HUDLocation;
+
 - (void) addCircles : (UIView*) viewToAdd;
+
+- (void) storeColor : (UIButton*) myButton;
+
+- (UIColor*) getColor : (int) colorIndex;
+
+- (void) validateSubmission : (UIButton*) myButton;
 
 @end

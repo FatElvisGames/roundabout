@@ -20,13 +20,21 @@
     KIP_SplashScreen* vSplashScreen;
     CGRect deviceBounds;
     
+    NSUserDefaults* userDefaults; 
+    
     FEG_RegisterController* vcRegister;
+    FEG_GameBoard* vcGameBoard; 
 }
 
 @property (nonatomic, retain) UIViewController* currentViewController;
-
-- (void) deviceOrientationDidChange;
+@property (nonatomic, strong) UIColor* clrUserColor;
+@property (nonatomic, strong) NSString* strUserName;
+@property (nonatomic, assign) int HUDLocation;
 
 - (void) checkUserRegistration;
+
+- (void) showGameBoard;
+
+
 
 @end

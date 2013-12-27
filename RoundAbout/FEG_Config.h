@@ -21,7 +21,9 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define STANDARD_FONT [UIFont fontWithName:@"Avenir-Book" size:18.0]
+#define INSTRUCTIONS_FONT [UIFont fontWithName:@"Avenir-Book" size:15.0]
 #define TITLE_FONT [UIFont fontWithName:@"moonhouse" size:36.0]
+#define WELCOME_FONT [UIFont fontWithName:@"moonhouse" size:22.0]
 #define SPLASH_FONT [UIFont fontWithName:@"LoungeBait" size:48.0]
 #define HUD_FONT [UIFont fontWithName:@"LoungeBait" size:30.0]
 
@@ -39,10 +41,6 @@
 #define FEG_RA_SLATE [UIColor colorWithRed:81/255.0f green:83/255.0f blue:99/255.0f alpha:1.0]
 
 #define COLOR_WHEEL [NSArray arrayWithObjects: FEG_RA_RED, FEG_RA_GREEN, FEG_RA_PURPLE, FEG_RA_ORANGE, FEG_RA_YELLOW, FEG_RA_BLUE, FEG_RA_OLIVE, FEG_RA_BROWN, FEG_RA_SLATE, nil]
-
-
-
-
 
 
 
