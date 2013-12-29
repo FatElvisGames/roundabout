@@ -7,7 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KIP_StringManager.h"
+#import "FEG_Label.h"
 
-@interface FEG_HUD : UIViewController
+#import "FEG_Config.h"
+
+typedef enum {
+    
+    kLevel,
+    kDiscConverted,
+    kDiscConvertedPercentage,
+    kDiscLost,
+    kDiscLostPercentage,
+    kDiscLeft,
+    kDiscLeftPercentage,
+    kTime,
+    kScore,
+    kPlayer,
+    
+} labelType;
+
+
+@interface FEG_HUD : UIViewController {
+    
+    KIP_StringManager* stringManager;
+    
+    NSMutableArray* arrObjs; 
+    
+}
+
+@property (nonatomic, strong)  NSString* strUserName;
+
+- (void) updateLabel:(int)labelID : (NSString*) strToDisplay;
 
 @end

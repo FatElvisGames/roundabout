@@ -25,7 +25,9 @@
 #define TITLE_FONT [UIFont fontWithName:@"moonhouse" size:36.0]
 #define WELCOME_FONT [UIFont fontWithName:@"moonhouse" size:22.0]
 #define SPLASH_FONT [UIFont fontWithName:@"LoungeBait" size:48.0]
-#define HUD_FONT [UIFont fontWithName:@"LoungeBait" size:30.0]
+#define HUD_BIG_FONT [UIFont fontWithName:@"AvenirNext-Bold" size:18.0]
+#define HUD_STANDARD_FONT [UIFont fontWithName:@"AvenirNext-Bold" size:14.0]
+#define HUD_SMALL_FONT [UIFont fontWithName:@"AvenirNext-Bold" size:12.0]
 
 
 #define FEG_RA_RED [UIColor colorWithRed:158/255.0f green:11/255.0f blue:15/255.0f alpha:1.0]

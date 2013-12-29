@@ -91,7 +91,7 @@
     
     //check the hasError value
     if (hasError) {
-        NSLog(@"%@\n%@", strErrMsg, valueToConvert);
+        DDLogVerbose(@"%@\n%@", strErrMsg, valueToConvert);
     }
     else {
         return decMyNum;
@@ -447,8 +447,7 @@
 }
 
 - (float)randomFloatValueBetween:(float)min :(float)max {
-    NSLog(@"%f", min);
-    return (((float)arc4random()/0x100000000)*(max-min)+min);
+        return (((float)arc4random()/0x100000000)*(max-min)+min);
 }
 
 @end

@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+        
         self.view.backgroundColor = [UIColor whiteColor];
         vSplashScreen = [[KIP_SplashScreen alloc] init];
         
@@ -27,6 +28,7 @@
         deviceBounds = self.view.bounds;
         
         vcRegister = [[FEG_RegisterController alloc] init];
+        vcHUD = [[FEG_HUD alloc] init];
         vcGameBoard = [[FEG_GameBoard alloc] init];
     }
     return self;
@@ -103,6 +105,11 @@
     vcGameBoard.clrUserColor = self.clrUserColor;
     [self presentChildViewController:vcGameBoard];
     [vcGameBoard setUpGameBoard:1];
+    
+    //bring in the HUD
+    [self presentChildViewController:vcHUD];
+    [vcHUD updateLabel:kPlayer:[userDefaults objectForKey:@"User Name"]];
+
 }
 
 
@@ -113,16 +120,24 @@
     //add the child view controller
     [self addChildViewController:vcChild];
     
-    [vcChild.view setFrame:CGRectMake(769.0, 0.0, 768.0, 1024.0)];
+    
+    if ([vcChild isKindOfClass:[FEG_HUD class]]) {
+        [vcChild.view setFrame:CGRectMake(769.0, 0.0, 768.0, 240.0)];
+    } else if ([vcChild isKindOfClass:[FEG_GameBoard class]]) {
+        [vcChild.view setFrame:CGRectMake(769.0, 240.0, 768.0, 600.0)];
+    } else {
+        [vcChild.view setFrame:CGRectMake(769.0, 0.0, 768.0, 1024.0)];
+    }
         
     [self.view addSubview:vcChild.view];
     
     if (_currentViewController) {
         
-        //remove the currentViewController's view from superview, remove currentViewController from parent, reset currentViewController to vcChild
-        [self removeChildViewController];
+        //remove the currentViewController's view from superview, remove currentViewController from parent, reset currentViewController to vcChild - UNLESS IT IS THE HUD, THE HUD SHALL REMAIN...UNLESS WE NEED TO REMOVE IT : D
         
-        _currentViewController = vcChild;
+        //[self removeChildViewController];
+        
+        self.currentViewController = vcChild;
         
     } else {
         

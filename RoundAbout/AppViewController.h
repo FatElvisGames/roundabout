@@ -23,6 +23,7 @@
     NSUserDefaults* userDefaults; 
     
     FEG_RegisterController* vcRegister;
+    FEG_HUD* vcHUD;
     FEG_GameBoard* vcGameBoard; 
 }
 

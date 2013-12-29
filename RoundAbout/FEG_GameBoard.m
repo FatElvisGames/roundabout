@@ -23,7 +23,6 @@
         numberManager = [[KIP_NumberManager alloc] init];
         
         self.view.backgroundColor = [UIColor blackColor];
-        [self.view setFrame:CGRectMake(0.0, 0.0, 768.0, 1024.0)];
     }
     return self;
 }
@@ -33,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    vGameBoard = [[UIView alloc] initWithFrame:CGRectMake(84.0, 200.0, 600.0, 600.0)];
+    vGameBoard = [[UIView alloc] initWithFrame:CGRectMake(84.0, 40.0, 600.0, 600.0)];
     vGameBoard.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:vGameBoard];
 }
@@ -41,7 +40,6 @@
 #pragma  mark - Game Setup
 - (void) setUpGameBoard : (int) level {
     
-    DDLogVerbose(@"%@", self.clrUserColor);
  
     self.dictLevelSettings = [self getLevelSettings:level];
     
@@ -83,6 +81,12 @@
         
         for(int c=0; c<6; c++) {
             
+            //get a random color number
+            do  {
+                int colorNumber = [numberManager randomValueBetween:0 and:COLOR_WHEEL.count-1];
+                clrCircle = [COLOR_WHEEL objectAtIndex:colorNumber];
+            } while([clrCircle isEqual:self.clrUserColor]);
+            
             //check the circle point
             for(NSArray* arrPoint in arrUserCircleLocations) {
                 
@@ -93,15 +97,9 @@
                 if (rowPoint == r && colPoint == c) {
                     
                     clrCircle = self.clrUserColor;
-                } else {
-                    //get a random color number
-                    int colorNumber = [numberManager randomValueBetween:0 and:COLOR_WHEEL.count-1];
-                    clrCircle = [COLOR_WHEEL objectAtIndex:colorNumber];
                 }
             }
-            
-            DDLogVerbose(@"%@", clrCircle);
-            
+                        
             //increment x
             if (c>0) {
                 circleX = circleX + (circleRadius + 40.0);

@@ -28,13 +28,13 @@
         UIView* vWrapper = [[UIView alloc] initWithFrame:selfFrame];
         
         
-        UIView* vBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1024.0, 768.0)];
+        UIView* vBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 768.0, 1024.0)];
         vBackground.backgroundColor = [UIColor whiteColor];
         vBackground.clipsToBounds = YES;
         [self addCircles:vBackground];
         [vWrapper addSubview:vBackground];
         
-        UIView* vCenterCol = [[UIView alloc] initWithFrame:CGRectMake(312.0, 0.0, 400.0, 768.0)];
+        UIView* vCenterCol = [[UIView alloc] initWithFrame:CGRectMake(184.0, 0.0, 400.0, 1024.0)];
         vCenterCol.backgroundColor = [UIColor whiteColor];
         vCenterCol.layer.shadowColor = [UIColor blackColor].CGColor;
         vCenterCol.layer.shadowOffset = CGSizeMake(2.0, 5.0);
@@ -43,7 +43,7 @@
         
         NSString* strWelcome = @"Welcome To RoundAbout";
         CGSize welcomeSize = [stringManager getStringSize:CGSizeMake(vCenterCol.frame.size.width, 999.0) :WELCOME_FONT :strWelcome];
-        UILabel* lblWelcome = [[UILabel alloc] initWithFrame:CGRectMake((vCenterCol.frame.size.width/2)-(welcomeSize.width/2), 40.0, welcomeSize.width, welcomeSize.height)];
+        UILabel* lblWelcome = [[UILabel alloc] initWithFrame:CGRectMake((vCenterCol.frame.size.width/2)-(welcomeSize.width/2), 200.0, welcomeSize.width, welcomeSize.height)];
         lblWelcome.font = WELCOME_FONT;
         lblWelcome.text = strWelcome;
         lblWelcome.textColor = FEG_RA_BLACK;
@@ -129,8 +129,8 @@
         
         
         //create the circle
-        float circleX = [numberManager randomFloatValueBetween:-20.0 :1024.0];
-        float circleY = [numberManager randomFloatValueBetween:0.0 :768.0];
+        float circleX = [numberManager randomFloatValueBetween:-20.0 :768.0];
+        float circleY = [numberManager randomFloatValueBetween:0.0 :1024.0];
         float circleRadius = [numberManager randomFloatValueBetween:30.0 :60.0];
         
         int colorNum = [numberManager randomValueBetween:0 and:COLOR_WHEEL.count-1];
