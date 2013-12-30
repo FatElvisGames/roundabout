@@ -11,6 +11,7 @@
 #import "FEG_Label.h"
 
 #import "FEG_Config.h"
+#import "FEG_GameController.h"
 
 typedef enum {
     
@@ -31,6 +32,7 @@ typedef enum {
 @interface FEG_HUD : UIViewController {
     
     KIP_StringManager* stringManager;
+    FEG_GameController* gameControl;
     
     NSMutableArray* arrObjs; 
     

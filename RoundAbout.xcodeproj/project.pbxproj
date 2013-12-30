@@ -50,6 +50,9 @@
 		08B71FD11867CBBE00A0DD91 /* FEG_HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B71FD01867CBBE00A0DD91 /* FEG_HUD.m */; };
 		57303B40186F03DF0078713E /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 57303B3F186F03DF0078713E /* ToDo */; };
 		57303B47186F0C2C0078713E /* FEG_Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 57303B46186F0C2C0078713E /* FEG_Label.m */; };
+		57303B4A18704F990078713E /* FEG_GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57303B4918704F990078713E /* FEG_GameController.m */; };
+		57303B4D187051FD0078713E /* img_leftright.png in Resources */ = {isa = PBXBuildFile; fileRef = 57303B4B187051FD0078713E /* img_leftright.png */; };
+		57303B4E187051FD0078713E /* img_updown.png in Resources */ = {isa = PBXBuildFile; fileRef = 57303B4C187051FD0078713E /* img_updown.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +136,10 @@
 		57303B3F186F03DF0078713E /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		57303B45186F0C2C0078713E /* FEG_Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_Label.h; sourceTree = "<group>"; };
 		57303B46186F0C2C0078713E /* FEG_Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_Label.m; sourceTree = "<group>"; };
+		57303B4818704F990078713E /* FEG_GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEG_GameController.h; sourceTree = "<group>"; };
+		57303B4918704F990078713E /* FEG_GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEG_GameController.m; sourceTree = "<group>"; };
+		57303B4B187051FD0078713E /* img_leftright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_leftright.png; sourceTree = "<group>"; };
+		57303B4C187051FD0078713E /* img_updown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_updown.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +254,8 @@
 		083A00BC1865C31600D21B75 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				57303B4B187051FD0078713E /* img_leftright.png */,
+				57303B4C187051FD0078713E /* img_updown.png */,
 				083A01051865C86600D21B75 /* feg_logo.png */,
 			);
 			name = Images;
@@ -343,6 +352,8 @@
 				083A00F61865C54E00D21B75 /* FEG_TextField.m */,
 				57303B45186F0C2C0078713E /* FEG_Label.h */,
 				57303B46186F0C2C0078713E /* FEG_Label.m */,
+				57303B4818704F990078713E /* FEG_GameController.h */,
+				57303B4918704F990078713E /* FEG_GameController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -443,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				083A01011865C7D700D21B75 /* Typo Oxin free promo.ttf in Resources */,
+				57303B4D187051FD0078713E /* img_leftright.png in Resources */,
 				083A01061865C86600D21B75 /* feg_logo.png in Resources */,
 				083A00A01865AD9000D21B75 /* Images.xcassets in Resources */,
 				083A00921865AD9000D21B75 /* InfoPlist.strings in Resources */,
@@ -450,6 +462,7 @@
 				083A009B1865AD9000D21B75 /* Main.storyboard in Resources */,
 				083A01001865C7D700D21B75 /* moonhouse.ttf in Resources */,
 				083A00FD1865C6F100D21B75 /* LOUNGEB.TTF in Resources */,
+				57303B4E187051FD0078713E /* img_updown.png in Resources */,
 				57303B40186F03DF0078713E /* ToDo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +488,7 @@
 				083A00CB1865C34B00D21B75 /* KIP_StringManager.m in Sources */,
 				083A00F11865C43100D21B75 /* KIP_LogManager.m in Sources */,
 				083A00CE1865C34B00D21B75 /* KIP_ColorManager.m in Sources */,
+				57303B4A18704F990078713E /* FEG_GameController.m in Sources */,
 				083A00E01865C38700D21B75 /* DDASLLogger.m in Sources */,
 				083A00E31865C38700D21B75 /* DDTTYLogger.m in Sources */,
 				083A00CD1865C34B00D21B75 /* KIP_NumberManager.m in Sources */,

@@ -202,6 +202,10 @@
         [self.view addSubview:lblGameCoin];
         [arrObjs addObject:lblGameCoin];
         
+        gameControl = [[FEG_GameController alloc] init];
+        [gameControl setFrame:CGRectMake((self.view.frame.size.width/2)-200.0, self.view.frame.size.height-100.0, 400.0, 120.0)];
+        gameControl.backgroundColor = [UIColor redColor];
+        [self.view addSubview:gameControl];
         
     }
     return self;

@@ -35,6 +35,8 @@
     vGameBoard = [[UIView alloc] initWithFrame:CGRectMake(84.0, 40.0, 600.0, 600.0)];
     vGameBoard.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:vGameBoard];
+    
+    
 }
 
 #pragma  mark - Game Setup
